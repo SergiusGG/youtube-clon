@@ -1,6 +1,7 @@
 
 import React from "react";
 import youtube from './apis/youtube';
+import Searchbar from "./searchbar";
 
 
 class App extends React.Component{
@@ -22,10 +23,11 @@ handleSubmit = async (termFromSearchBar) => {
         }
 
     })
+    console.log(response);
     this.setState({
           videos: response.data.items
     })
-
+console.log(response);
 };
 
 handleVideoSelect = (video) => {
@@ -35,7 +37,7 @@ handleVideoSelect = (video) => {
 render(){
     return(
       <div>
-      
+      <Searchbar handleFormSubmit={this.handleSubmit}/>
   </div>
      )
   }
