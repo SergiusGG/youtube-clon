@@ -2,6 +2,8 @@
 import React from "react";
 import youtube from './apis/youtube';
 import Searchbar from "./searchbar";
+import VideoList from "./VideoList";
+import VideoItem from "./VideoItem";
 
 
 class App extends React.Component{
@@ -38,6 +40,8 @@ render(){
     return(
       <div>
       <Searchbar handleFormSubmit={this.handleSubmit}/>
+      <VideoList handleVideoSelect= {this.handleVideoSelect} videos={this.state.videos}/>
+      {/* <VideoItem/> */}
   </div>
      )
   }
