@@ -3,7 +3,7 @@ import React from "react";
 import youtube from './apis/youtube';
 import Searchbar from "./searchbar";
 import VideoList from "./VideoList";
-import VideoItem from "./VideoItem";
+import VideoDetail from "./VideoDetail";
 
 
 class App extends React.Component{
@@ -38,11 +38,19 @@ handleVideoSelect = (video) => {
 
 render(){
     return(
-      <div>
-      <Searchbar handleFormSubmit={this.handleSubmit}/>
-      <VideoList handleVideoSelect= {this.handleVideoSelect} videos={this.state.videos}/>
-      {/* <VideoItem/> */}
-  </div>
+        <div className='ui container' style={{marginTop: '1em'}}>
+                <Searchbar handleFormSubmit={this.handleSubmit}/>
+                <div className='ui grid'>
+                    <div className="ui row">
+                        <div className="eleven wide column">
+                            <VideoDetail video={this.state.selectedVideo}/>
+                        </div>
+                        <div className="five wide column">
+                            <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
+                        </div>
+                    </div>
+                </div>
+            </div>
      )
   }
 }
