@@ -1,9 +1,10 @@
 
 import React from "react";
-import youtube from './apis/youtube';
+import youtube from '../apis/youtube';
 import Searchbar from "./searchbar";
 import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
+import classes from '../styles/App.module.css';
 
 
 class App extends React.Component{
@@ -38,14 +39,14 @@ handleVideoSelect = (video) => {
 
 render(){
     return(
-        <div className='ui container' style={{marginTop: '1em'}}>
+        <div className={classes.container} >
                 <Searchbar handleFormSubmit={this.handleSubmit}/>
-                <div className='ui grid'>
-                    <div className="ui row">
-                        <div className="eleven wide column">
+                <div >
+                    <div >
+                        <div >
                             <VideoDetail video={this.state.selectedVideo}/>
                         </div>
-                        <div className="five wide column">
+                        <div >
                             <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
                         </div>
                     </div>

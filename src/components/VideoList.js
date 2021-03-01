@@ -1,5 +1,7 @@
 import React from "react";
 import VideoItem from "./VideoItem";
+import classes from '../styles/List.module.css';
+
 
 const VideoList = ({ videos, handleVideoSelect }) => {
     const renderedVideos = videos.map((video) => {
@@ -10,7 +12,7 @@ const VideoList = ({ videos, handleVideoSelect }) => {
       />
     });
   
-    return <div>{renderedVideos}</div>;
+    return <div className={classes.list}>{renderedVideos}</div>;
   };
   
   export default VideoList;
